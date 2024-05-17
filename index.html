@@ -1,5 +1,5 @@
 <html>
-  <title>HappyWeb</title>
+  <title>Toolchain Healthcheck</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <style>
     body {
@@ -8,7 +8,7 @@
     div.block {
       background: lightyellow;
       float: left;
-      font-size: 32px;
+      font-size: 12px;
       font-family: Arial;
       margin: 12px;
       width: 300px;
@@ -38,7 +38,7 @@
   </style>
   <body>
   </body>
-  <h1>HappyWeb</h1>
+  <h1>Toolchain Connectivity Check</h1>
   <span id="time"></span>
   <p></p>
   <center>
@@ -65,7 +65,7 @@
             .html("<a target=_blank href=https://" + url + ">" + url + "</a><br><span id=i" + n + ">Loading...</span>")
             .appendTo($("body"))
             .append($("<img>")
-              .attr("src", "http://" + url + "/favicon.ico")
+              .attr("src", "https://" + url + "/favicon.ico")
             );
           $.get("http://localhost:" + PORT_NUMBER + "?url=" + url, function(data) {
             let details = "FAILED";
@@ -82,6 +82,6 @@
         })
       });
     }, 0);
-    $("#time").text(new Date());
+    $("#time").text((new Date()).toLocaleDateString());
   </script>
 </html>

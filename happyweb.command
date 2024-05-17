@@ -1,3 +1,2 @@
-cd ~/happyweb
 open "http://localhost:9137"
-python server.py
+python3 server.py
